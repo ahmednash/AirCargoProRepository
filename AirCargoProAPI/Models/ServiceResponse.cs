@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace AirCargoProAPI.Models
 {
     public class ServiceResponse<T>
