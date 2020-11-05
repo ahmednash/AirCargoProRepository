@@ -1,3 +1,5 @@
+using System;
+
 namespace AirCargoProAPI.Models
 {
     public class Zone

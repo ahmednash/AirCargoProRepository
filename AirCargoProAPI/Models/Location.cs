@@ -3,7 +3,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations.Schema;
 using GeoAPI.Geometries;
 using Microsoft.EntityFrameworkCore;
-using NetToplogySuite.Geometries;
+using NetTopologySuite.Geometries;
 
 namespace AirCargoProAPI.Models
 {
@@ -13,7 +13,7 @@ namespace AirCargoProAPI.Models
         public string Name { get; set; }
         public string Description { get; set; }
         [Column(TypeName = "geometry")]
-        public IPoint Location { get; set; }
+        public IPoint GeoLocation { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public double Distance { get; set; }

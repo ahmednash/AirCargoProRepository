@@ -1,5 +1,3 @@
-using System;
-
 namespace AirCargoProAPI.Models
 {
     public class UserRole
