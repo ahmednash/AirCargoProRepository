@@ -16,8 +16,7 @@ namespace AirCargoProAPI.Models
         public int CountryID { get; set; }
         public string PostCode { get; set; }
         public string ZipCode { get; set; }
-        [Column(TypeName = "geometry")]
-        public IPoint Location { get; set; }
+        public int LocationID { get; set; }
         public string EmailAddress { get; set; }
         public string Website { get; set; }
         public string Facebook { get; set; }

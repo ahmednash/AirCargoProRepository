@@ -6,8 +6,7 @@ namespace AirCargoProAPI.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsCapital { get; set; }
-        [Column(TypeName = "geometry")]
-        public IPoint Location { get; set; }
+        public int LocationID { get; set; }
         public int CreatedID { get; set; }
         public string CreatedIP { get; set; }
         public DateTime CreatedDate { get; set; }

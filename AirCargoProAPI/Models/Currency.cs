@@ -7,6 +7,7 @@ namespace AirCargoProAPI.Models
         public int CurrencyID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public int CountryID { get; set; }
         public int CreatedID { get; set; }
         public string CreatedIP { get; set; }
         public DateTime CreatedDate { get; set; }
