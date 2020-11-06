@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using AirCargoProAPI.Models;
 
 namespace AirCargoProAPI.Services.AircraftService
@@ -42,20 +43,26 @@ namespace AirCargoProAPI.Services.AircraftService
             }
         };
 
-        public List<Aircraft> GetAllAircrafts()
+        public async Task<ServiceResponse<List<Aircraft>>> GetAllAircrafts()
         {
-            return aircrafts;
+            ServiceResponse<List<Aircraft>> serviceResponse = new ServiceResponse<List<Aircraft>>();
+            serviceResponse.Data = aircrafts;
+            return serviceResponse;
         }
 
-        public Aircraft GetAircraftByID(int id)
+        public async Task<ServiceResponse<Aircraft>> GetAircraftByID(int id)
         {
-            return aircrafts.FirstOrDefault(a => a.AircraftID == id);
+            ServiceResponse<Aircraft> serviceResponse = new ServiceResponse<Aircraft>();
+            serviceResponse.Data = aircrafts.FirstOrDefault(a => a.AircraftID == id);
+            return serviceResponse;
         }
 
-        public List<Aircraft> AddAircraft(Aircraft newAircraft)
+        public async Task<ServiceResponse<List<Aircraft>>> AddAircraft(Aircraft newAircraft)
         {
+            ServiceResponse<List<Aircraft>> serviceResponse = new ServiceResponse<List<Aircraft>>();
             aircrafts.Add(newAircraft);
-            return aircrafts;
+            serviceResponse.Data = aircrafts;
+            return serviceResponse;
         }
     }
 }

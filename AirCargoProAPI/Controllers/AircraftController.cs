@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading.Tasks;
 using AirCargoProAPI.Models;
 using AirCargoProAPI.Services.AircraftService;
 
@@ -57,21 +58,21 @@ namespace AirCargoProAPI.Controllers
         }
 
         [HttpGet("GetAll")]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_aircraftService.GetAllAircrafts());
+            return Ok(await _aircraftService.GetAllAircrafts());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetSingle(int id)
+        public async Task<IActionResult> GetSingle(int id)
         {
-            return Ok(_aircraftService.GetAircraftByID(id));
+            return Ok(await _aircraftService.GetAircraftByID(id));
         }
 
         [HttpPost]
-        public IActionResult AddAircraft(Aircraft newAircraft)
+        public async Task<IActionResult> AddAircraft(Aircraft newAircraft)
         {
-            return Ok(_aircraftService.AddAircraft(newAircraft));
+            return Ok(await _aircraftService.AddAircraft(newAircraft));
         }
     }
 }
